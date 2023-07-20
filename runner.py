@@ -16,19 +16,21 @@ pygame.display.set_caption('Runner')
 
 clock = pygame.time.Clock()
 
-# create a font surface 
-
-test_front = pygame.font.Font('./font/Pixeltype.ttf', 50)
-
-# create surfaces
+# create sky and ground surfaces
 
 sky_surface = pygame.image.load('./graphics/Sky.png').convert_alpha()
 
 ground_surface = pygame.image.load('./graphics/Ground.png').convert_alpha()
 
-# create a text surface 
+# create a font surface 
 
-text_surface = test_front.render('My game', False, 'Black')
+text_font = pygame.font.Font('./font/Pixeltype.ttf', 50)
+
+# create a score surface
+
+score_surface = text_font.render('Score', False, (64, 64, 64))
+
+score_rectangle = score_surface.get_rect(center = (400, 50))
 
 # create a snail surface and rectangle
 
@@ -62,13 +64,20 @@ while True:
 
             sys.exit()
 
+        # check for mouse position
+
+        # if event.type == pygame.MOUSEMOTION:
+
+        #     if player_rectangle.collidepoint(event.pos):
+        #         print('Player and mouse collision ...')
+
     # attach surfaces
 
     screen.blit(sky_surface, (0, 0))
 
     screen.blit(ground_surface, (0, 300))
 
-    screen.blit(text_surface, (300, 50))
+    screen.blit(score_surface, score_rectangle)
 
     # move snail farther to the left
 
@@ -82,6 +91,11 @@ while True:
     # put player 
 
     screen.blit(player_surface, player_rectangle)
+
+    # check for collision
+
+    # if player_rectangle.colliderect(snail_rectangle):
+    #     print('collision')
 
     # update frame
 
