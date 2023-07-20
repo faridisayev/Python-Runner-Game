@@ -101,6 +101,6 @@ while True:
 
     pygame.display.update()
 
-    # while loop will not run more than 60 times per seconds
+    # while loop will not run more than 60 times per second
 
     clock.tick(60)
