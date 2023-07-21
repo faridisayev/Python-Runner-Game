@@ -206,8 +206,11 @@ while True:
         score_message_rectangle = score_message.get_rect(center = (400, 330))
 
         if score == 0:
+
             screen.blit(game_message, game_message_rectangle)
+
         else:
+            
             screen.blit(score_message, score_message_rectangle)
 
     # update frame
