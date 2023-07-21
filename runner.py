@@ -7,15 +7,15 @@ class Player(pygame.sprite.Sprite):
 
         super().__init__()
 
-        player_walk_1 = pygame.image.load('./graphics/player/player_walk_1.png').convert_alpha()
+        player_walk_1 = pygame.image.load('./static/graphics/player/player_walk_1.png').convert_alpha()
 
-        player_walk_2 = pygame.image.load('./graphics/player/player_walk_2.png').convert_alpha()
+        player_walk_2 = pygame.image.load('./static/graphics/player/player_walk_2.png').convert_alpha()
 
         self.player_walk = [player_walk_1, player_walk_2]
 
         self.player_index = 0
 
-        self.player_jump = pygame.image.load('./graphics/player/jump.png').convert_alpha()
+        self.player_jump = pygame.image.load('./static/graphics/player/jump.png').convert_alpha()
 
         self.image = self.player_walk[self.player_index]
 
@@ -23,7 +23,7 @@ class Player(pygame.sprite.Sprite):
 
         self.gravity = 0
 
-        self.jump_sound = pygame.mixer.Sound('./audio/jump.mp3')
+        self.jump_sound = pygame.mixer.Sound('./static/audio/jump.mp3')
 
         self.jump_sound.set_volume(0.5)
 
@@ -79,9 +79,9 @@ class Obstacle(pygame.sprite.Sprite):
 
         if type == 'fly':
 
-            fly_1 = pygame.image.load('./graphics/fly/fly1.png').convert_alpha()  
+            fly_1 = pygame.image.load('./static/graphics/fly/fly1.png').convert_alpha()  
 
-            fly_2 = pygame.image.load('./graphics/fly/fly2.png').convert_alpha()
+            fly_2 = pygame.image.load('./static/graphics/fly/fly2.png').convert_alpha()
 
             self.frames = [fly_1, fly_2]
 
@@ -89,9 +89,9 @@ class Obstacle(pygame.sprite.Sprite):
 
         else:
 
-            snail_1 = pygame.image.load('./graphics/snail/snail1.png').convert_alpha()    
+            snail_1 = pygame.image.load('./static/graphics/snail/snail1.png').convert_alpha()    
 
-            snail_2 = pygame.image.load('./graphics/snail/snail2.png').convert_alpha()
+            snail_2 = pygame.image.load('./static/graphics/snail/snail2.png').convert_alpha()
 
             self.frames = [snail_1, snail_2]
 
@@ -171,17 +171,17 @@ clock = pygame.time.Clock()
 
 # create sky and ground surfaces
 
-sky_surface = pygame.image.load('./graphics/Sky.png').convert_alpha()
+sky_surface = pygame.image.load('./static/graphics/Sky.png').convert_alpha()
 
-ground_surface = pygame.image.load('./graphics/Ground.png').convert_alpha()
+ground_surface = pygame.image.load('./static/graphics/Ground.png').convert_alpha()
 
 # create a font surface 
 
-text_font = pygame.font.Font('./font/Pixeltype.ttf', 50)
+text_font = pygame.font.Font('./static/font/Pixeltype.ttf', 50)
 
 # Intro screen
 
-player_stand = pygame.image.load('./graphics/player/player_stand.png').convert_alpha()
+player_stand = pygame.image.load('./static/graphics/player/player_stand.png').convert_alpha()
 
 player_stand= pygame.transform.rotozoom(player_stand, 0, 2)
 
@@ -225,7 +225,7 @@ pygame.time.set_timer(fly_animation_timer, 200)
 
 # background music 
 
-background_music = pygame.mixer.Sound('./audio/music.wav')
+background_music = pygame.mixer.Sound('./static/audio/music.wav')
 
 background_music.play(loops = -1)
 
