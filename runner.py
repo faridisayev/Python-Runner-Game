@@ -171,9 +171,9 @@ clock = pygame.time.Clock()
 
 # create sky and ground surfaces
 
-sky_surface = pygame.image.load('./static/graphics/Sky.png').convert_alpha()
+sky_surface = pygame.image.load('./static/graphics/sky.png').convert_alpha()
 
-ground_surface = pygame.image.load('./static/graphics/Ground.png').convert_alpha()
+ground_surface = pygame.image.load('./static/graphics/ground.png').convert_alpha()
 
 # create a font surface 
 
