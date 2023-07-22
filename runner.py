@@ -127,8 +127,6 @@ class Obstacle(pygame.sprite.Sprite):
             
             self.kill()
 
-# display score function 
-
 def display_score():
 
     current_time = int(pygame.time.get_ticks() / 1000) - start_time
@@ -245,15 +243,9 @@ while True:
 
     for event in pygame.event.get():
 
-        # check for quit
-
         if event.type == pygame.QUIT:
 
-            # quit the game 
-
             pygame.quit()
-
-            # secure exit
 
             sys.exit()
 
